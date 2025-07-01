@@ -1,0 +1,254 @@
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0469b9, #e6ecf9);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5em;
+      width: 100%;
+      max-width: 1400px;
+      padding: 2.2em 1em 2.2em 0em;
+      box-sizing: border-box;
+    }
+
+    .left, .right {
+      background: #fff;
+      border-radius: 18px;
+      padding: 2.5em 2em 2em 2em;
+      box-shadow: 0 4px 18px rgba(4, 105, 185, 0.10);
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-width: 280px;
+      flex: 1 1 auto;
+      box-sizing: border-box;
+    }
+
+    .left {
+      align-items: flex-start;
+    }
+
+    .logo {
+      max-width: 180px;
+      margin-bottom: 0.8em;
+      margin-top: 0.2em;
+    }
+
+    h2 {
+      color: #0469b9;
+      margin: 0 0 1.5em 0;
+      font-size: 1.45em;
+      font-weight: 700;
+    }
+
+    h3 {
+      color: #0469b9;
+      font-size: 1.15em;
+      margin: 0 0 1.2em 0;
+      font-weight: 700;
+    }
+
+    form {
+      width: 100%;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 140px;
+      padding: 1em;
+      font-size: 1.05em;
+      border: 2px solid #0469b9;
+      border-radius: 14px;
+      resize: vertical;
+      font-family: 'Courier New', monospace;
+      background: #fafbfc;
+      color: #222;
+      margin-bottom: 0.8em;
+      box-sizing: border-box;
+    }
+
+    .prompt-helper {
+      margin-bottom: 1.1em;
+      color: #0469b9;
+      background: #e6ecf9;
+      padding: 0.7em 1em;
+      border-radius: 11px;
+      font-size: 1.01em;
+    }
+
+    button {
+      display: block;
+      width: 140px;
+      margin: 0 auto 0 0;
+      background-color: #0469b9;
+      color: white;
+      padding: 0.72em 0;
+      border: none;
+      border-radius: 16px;
+      font-size: 1.12em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.25s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(4, 105, 185, 0.07);
+    }
+
+    button:hover {
+      background-color: #034f90;
+    }
+
+    .success {
+      margin-top: 1.1em;
+      color: #149933;
+      font-weight: 600;
+    }
+
+    #loading-overlay {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(30, 44, 70, 0.38);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #loading {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(4, 105, 185, 0.18);
+      padding: 2.2em 2.5em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 260px;
+    }
+
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #0469b9;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .sql-result {
+      width: 100%;
+    }
+
+    .sql-table-wrapper {
+      width: 100%;
+      max-height: 330px;
+      overflow-y: auto;
+      border-radius: 18px;
+      box-shadow: 0 3px 16px rgba(4, 105, 185, 0.06);
+      margin: 1.4em 0 0 0;
+      background: #fff;
+      border: 1px solid #e4eef8;
+      scrollbar-width: thin;
+      scrollbar-color: #68a9ea #f9f9f9;
+    }
+
+    .sql-table-wrapper::-webkit-scrollbar {
+      height: 7px;
+      width: 7px;
+      background: #f9f9f9;
+    }
+
+    .sql-table-wrapper::-webkit-scrollbar-thumb {
+      background: #68a9ea;
+      border-radius: 10px;
+    }
+
+    .sql-result table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.05em;
+    }
+
+    .sql-result th, .sql-result td {
+      padding: 0.7em 1.1em;
+    }
+
+    .sql-result th {
+      background: linear-gradient(90deg, #0469b9 85%, #42a4e9 100%);
+      color: #fff;
+      font-weight: 700;
+      border-bottom: 2px solid #034f90;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      text-align: left;
+    }
+
+    .sql-result td {
+      background: #f7fafd;
+      color: #222;
+      font-weight: 500;
+    }
+
+    .sql-result tr:nth-child(even) td { background: #f2f6fb; }
+    .sql-result tr:hover td { background: #e6f2fd; }
+
+    pre {
+      background: #f3f3f3;
+      padding: 0.8em 1em;
+      border-radius: 11px;
+      font-size: 0.99em;
+      line-height: 1.48;
+      box-shadow: 0 1px 4px rgba(4, 105, 185, 0.05);
+      overflow-x: auto;
+    }
+
+    /* 🌙 Responsive Fix */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em;
+        max-width: 100vw;
+      }
+
+      .left, .right {
+        width: 100% !important;
+        flex: unset !important;
+        min-width: unset !important;
+        padding: 1em;
+      }
+
+      .logo { max-width: 120px; }
+      h2 { font-size: 1.1em; }
+      h3 { font-size: 1em; }
+      textarea { font-size: 0.98em; min-height: 90px; }
+      button { width: 100%; font-size: 1em; }
+      .sql-table-wrapper { max-height: 180px; }
+    }
+
+    @media (max-width: 400px) {
+      .container { padding: 0.5em; }
+      .logo { max-width: 90px; }
+      textarea { font-size: 0.9em; padding: 0.7em; }
+      button { padding: 0.6em 0; font-size: 0.95em; }
+      .sql-table-wrapper { max-height: 120px; }
+    }
