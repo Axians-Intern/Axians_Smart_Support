@@ -1,0 +1,14 @@
+# Ignore Python cache and environment folders
+__pycache__/
+.env/
+venv/
+env/
+# Ignore Git folder
+.git/
+# Ignore SQLite database files
+*.db
+# Ignore VS Code settings
+.vscode/
+# Ignore Python bytecode
+*.pyc
+

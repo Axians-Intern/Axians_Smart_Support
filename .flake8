@@ -1,0 +1,32 @@
+[flake8]
+max-line-length = 88
+exclude = .git,__pycache__,env,venv
+# Ignore specific errors
+ignore = E203, E501, W503, F401, F403
+# E203: Whitespace before ':'
+# E501: Line too long (handled by black)
+# W503: Line break before binary operator (handled by black)
+# F401: Module imported but unused (handled by isort)
+# F403: 'from module import *' used; unable to detect unused imports (handled by isort)
+# Enable specific checks
+enable-extensions = G
+# G: General checks (e.g., whitespace, indentation)
+# Configure the complexity checker
+max-complexity = 10
+# Set the maximum complexity for functions and methods
+# This helps to keep the code maintainable and readable
+# Configure the output format
+output-file = flake8_report.txt
+# Save the report to a file for later review
+# Configure the format of the output
+format = default
+# Use the default format for the output
+# Configure the statistics output
+statistics = True
+# Show statistics about the code quality in the output
+# Configure the ignore list for specific files or directories
+per-file-ignores =
+    __init__.py: F401, F403
+# Ignore unused imports in __init__.py files
+    tests/*: F401, F403
+    
