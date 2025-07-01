@@ -37,6 +37,12 @@
           </div>
         </div>
         <textarea id="mail_message" name="mail_message" placeholder="Tapez ici votre question..."></textarea>
+        <div style="margin: 0.7em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
+          <input type="checkbox" id="include_pdfs" name="include_pdfs" value="yes">
+          <label for="include_pdfs" style="font-size:1em; color:#0469b9; cursor:pointer;">Inclure les PDFs</label>
+          <input type="checkbox" id="include_excels" name="include_excels" value="yes" style="margin-left:1.5em;">
+          <label for="include_excels" style="font-size:1em; color:#0469b9; cursor:pointer;">Inclure les Excel</label>
+        </div>
         <button type="submit">Envoyer</button>
       </form>
       {% if confirmation %}
